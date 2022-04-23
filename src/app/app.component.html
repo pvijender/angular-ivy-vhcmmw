@@ -1,0 +1,20 @@
+<button class="btn zui-button" (click)="addNode()">
+  Add Node
+</button>
+<button class="btn zui-button" (click)="saveConnections()">
+    Save connections
+  </button>
+<div class="chart-wrapper" #wrapper>
+  <ng-container *ngFor="let node of nodes; let i = index">
+    <div
+      class="box"
+      [id]="'node' + (i + 1)"
+      [style.top.px]="node.top || 0"
+      [style.left.px]="node.left || 20"
+    >
+      <div class="node">
+        {{ 'Node' + (i + 1) }}
+      </div>
+    </div>
+  </ng-container>
+</div>
